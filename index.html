@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Document</title>
+</head>
+<body>
+    <main class="container">
+        <section class="modal">
+            <article class="adddelete">
+                <img src="./circle-check.png" style="cursor: pointer;" alt="Checkmark" onclick="setEvent()" />
+                <div class="buttonsholder">
+                    <img src="./trash-can.png" alt="Delete" />
+                    <img src="./close.png" alt="Close" />
+                </div>
+            </article>
+            <article class="eventDetails">
+                <input type="text" class="title" value="Flower Arrangement" / >
+                <div class="dateSelector">
+                    <img src="./calendar.png" alt="Calendar Icon">
+                    <input class="dateInput" value="Dec 5, 2024 at 8:00-10:00 AM" />
+                </div>
+            </article>
+            <article class="assignTo">
+                <div class="person">
+                    <img src="./user.png" alt="">
+                    <p class="assignText">Assign to:</p>
+                    <button class="personChangeButton" id="personChangeButton" onclick="toggleDropdown()">
+                        <div class="currentlySelectedPerson" id="currentlySelectedPerson">
+                            <img src="./person_dummy_image.png" alt="Current Person" / >
+                            <p class="personName">Jane Smith</p>
+                        </div>
+                        <img src="./Vector.png" alt="Dropdown" />
+                    </button>
+                    <!-- Create a Dropdown Menu -->
+                    <div class="dropdown" id="dropdown">
+                        <button class="personCard" onclick="changeCurrentPerson(this.firstElementChild)">
+                            <div class="currentlySelectedPerson">
+                                <img src="./person_dummy_image.png" alt="Current Person" / >
+                                <p class="personName">Jane Smith</p>
+                            </div>
+                        </button>
+                        <button class="personCard" onclick="changeCurrentPerson(this.firstElementChild)">
+                            <div class="currentlySelectedPerson">
+                                <img src="./person_dummy_image.png" alt="Current Person" / >
+                                <p class="personName">Smith Jane</p>
+                            </div>
+                        </button>
+                        <button class="personCard" onclick="changeCurrentPerson(this.firstElementChild)">
+                            <div class="currentlySelectedPerson">
+                                <img src="./person_dummy_image.png" alt="Current Person" / >
+                                <p class="personName">Jane</p>
+                            </div>
+                        </button>
+                    </div>
+                    <!-- Dropdown menu ends here -->
+                </div>
+            </article>
+            <article class="notes">
+                <img src="./note-sticky.png" alt="Note Icon" />
+                <p class="note">Note:</p>
+                <textarea name="" rows="2" cols="21" id="" class="noteText">09382049832 www.flowervendor.com</textarea>
+            </article>
+            <hr />
+            <article class="comments" id="comments">
+                <p class="commentHeader">Comments</p>
+                <article class="comment">
+                    <div class="commentHolder" onclick="editComment(this.parentElement)">
+                        <img src="./person_dummy_image.png" alt="Current Person" / >
+                        <div class="commentDetails">
+                            <p class="commentorName">Jane Smith</p>
+                            <p class="commentText">Thanks for assigning me on the task. We’ll get the details ironed out.</p>
+                        </div>
+                    </div>
+                    <img class="trash" src="./trash-can.png" alt="Delete Comment" onclick="deleteComment(this.parentElement)" />
+                </article>
+                <article class="comment">
+                    <div class="commentHolder" onclick="editComment(this.parentElement)">
+                        <img src="./person_dummy_image.png" alt="Current Person" / >
+                        <div class="commentDetails">
+                            <p class="commentorName">Jane Smith</p>
+                            <p class="commentText">Thanks for assigning me on the task. We’ll get the details ironed out.</p>
+                        </div>
+                    </div>
+                    <img class="trash" src="./trash-can.png" alt="Delete Comment" onclick="deleteComment(this.parentElement)" />
+                </article>
+            </article>
+            <article class="addComment">
+                <img src="./person_dummy_image.png" alt="Current Person" / >
+                <input type="text" id="writeCommentBox" class="writeComment" placeholder="Write comment..." required />
+                <img src="./send.png" alt="Send Button" class="sendButton" onclick="comment();"/>
+            </article>
+        </section>
+    </main>
+    <script src="./comment.js"></script>
+</body>
+</html>
